@@ -4,7 +4,7 @@
 		.module('bookmark', [
 	    'ngRoute',
 	    'ngResource',
-	    'firebase',
+	    'firebase'
 	  ])
 
 })()

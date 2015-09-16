@@ -31,10 +31,9 @@ angular
 				for(i = 0; i < 4; i++) {
 					var currentItem = data.items[i].volumeInfo
 					searchResults.append( "<h2>Result</h2>")
-					searchResults.append( "<input ng-model='vm.book.title' value='" + currentItem.title + "'></input>" )
-					searchResults.append( "<input ng-model='vm.book.author value='" + currentItem.authors[0] + "'></input>" )
-					searchResults.append( "<img src='" + currentItem.imageLinks.thumbnail + "' ng-click='vm.add(vm.book)'>" )
-					searchResults.append( "" )
+					searchResults.append( "<p>" + currentItem.title + " by " + currentItem.authors[0] + "</p>" )
+					// searchResults.append( "<p>" + currentItem.authors[0] + "</p>" )
+					// searchResults.append( "<img src='" + currentItem.imageLinks.thumbnail + "' ng-click='vm.add(vm.book)'>" )
 				}
 			})
 
