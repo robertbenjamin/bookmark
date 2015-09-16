@@ -18,36 +18,35 @@
 		<script src="bower_components/angularfire/dist/angularfire.min.js"></script>
 
 		<script src="js/app.js"></script>
-		<script src="js/routes.js"></script>
+		<!-- <script src="js/routes.js"></script> -->
 		<script src="js/controllers/books.js"></script>
+		<script src="js/controllers/search.js"></script>
 		<!-- <script src="js/directives/book.js"></script> -->
 </head>
 
 <body>
 
+<div ng-controller="searchController as vm">
+	<form>
+		<input ng-model="vm.searchTerm"></input>
+		<input type="submit" value="submit" ng-click="vm.search(vm.searchTerm)">
+	</form>
+
+	<h2>**Search Results**</h2>
+	<div ng-repeat="result in vm.searchResults">
+		<p>{{result.title}} by {{result.author}}</p>
+		<button ng-click="vm.add(result)">Select</button>
+	</div>
+</div>
+
 <div ng-controller="mainController as vm">
-
-		<h2>Search</h2>
-		<form>
-			<input class="search" ng-model="vm.searchTerm"></input>
-			<input class="submit" type="submit" value="submit" ng-click="vm.search(vm.searchTerm)">
-		</form>
-
-		<h2>**Search Results**</h2>
-		<div ng-repeat="result in vm.searchResults">
-			<p>{{result.title}} by {{result.author}}</p>
-			<button ng-click="vm.select(vm.result)">Select Book</button>
-		</div>
-
-
-		<div class="search-results"></div>
 
 		<h2>Entry Form</h2>
 		<form>
 			<label>Title: </label>
-			<input ng-model="vm.book.title" />
+			<input ng-model="vm.book.title">
 			<label>Author: </label>
-			<input ng-model="vm.book.author" />
+			<input ng-model="vm.book.author">
 			<input type="submit" value="submit" ng-click="vm.add(vm.book)"> 
 		</form>
 
