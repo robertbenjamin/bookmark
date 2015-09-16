@@ -1,0 +1,20 @@
+/*
+
+API KEY: AIzaSyDLhOKFqmBvr4XXHfoJfQFGevJR7cRekzQ
+
+EXAMPLE QUERY: https://www.googleapis.com/books/v1/volumes?q=zen+art+motorcycle&key=AIzaSyDLhOKFqmBvr4XXHfoJfQFGevJR7cRekzQ*/
+
+function parse(value) {
+	return value.split(" ").join("+")
+}
+
+$.getJSON("https://www.googleapis.com/books/v1/volumes?q=" + zen+art + "&key=AIzaSyDLhOKFqmBvr4XXHfoJfQFGevJR7cRekzQ" , function(data) {
+
+	for(i = 0; i < data.items.length; i++) {
+		var currentItem = data.items[i].volumeInfo
+		console.log(currentItem.title)
+		console.log(currentItem.authors[0])
+		console.log(currentItem.imageLinks.thumbnail)
+	}
+
+})

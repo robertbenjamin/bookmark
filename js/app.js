@@ -1,3 +1,16 @@
 (function() {
-	angular.module('bookmark', [])
-})();
+
+	angular
+		.module('bookmark', [
+	    'ngRoute',
+	    'ngResource',
+	    'firebase',
+	  ])
+
+})()
+
+/*
+'bookControllers',
+'bookServices',
+'bookDirectives'
+*/
