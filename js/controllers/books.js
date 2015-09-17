@@ -28,6 +28,23 @@ angular
 			vm.read.$add( BookAdder.get() )
 		})
 
+		vm.nowReading = function(book) {
+			vm.wantToRead.$remove(book)
+			vm.reading.$add(book)
+		}
+
+		vm.finishedReading = function(book) {
+			vm.reading.$remove(book)
+			vm.read.$add(book)
+		}
+
+		vm.addNote = function(book, note) {
+			updatedBook = book;
+			updatedBook.note = note
+			vm.read.$save(updatedBook)
+			vm.note = ""
+		}
+
 	})
 
 })()
