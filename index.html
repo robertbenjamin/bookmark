@@ -29,7 +29,8 @@
 <body>
 
 <nav>
-	<a href="#">Bookmark, the best place for your books</a>
+	<a href="/">Bookmark: the best place for your books</a>
+	<a class="made-by" href="https://github.com/robertbenjamin"> * by r.b.</a>
 </nav>
 
 <main>
@@ -41,7 +42,9 @@
 		</form>
 
 		<div class="search-results" ng-repeat="result in vm.searchResults">
-			<p><strong>{{result.title}}</strong> <br>— {{result.author}}</p>
+			<div class="book-container">
+				<p><strong>{{result.title}}</strong> <br>—{{result.author}}</p>
+			</div>
 			<button ng-click="vm.wantToRead(result)">Want to Read</button>
 			<button ng-click="vm.reading(result)">Reading Now!</button>
 			<button ng-click="vm.read(result)">Read</button>
@@ -53,7 +56,9 @@
 		<div class="child">
 			<h2>Want to Read</h2>
 			<div ng-repeat="book in vm.wantToRead">
-				<p><strong>{{book.title}}</strong> <br>— {{book.author}}</p>
+				<div class="book-container">
+					<p><strong>{{book.title}}</strong> <br>—{{book.author}}</p>
+				</div>
 				<button ng-click="vm.nowReading(book)">Reading!</button>
 				<button ng-click="vm.wantToRead.$remove(book)">Delete</button>
 			</div>
@@ -62,7 +67,9 @@
 		<div class="child">
 			<h2>Reading</h2>
 			<div ng-repeat="book in vm.reading">
-				<p><strong>{{book.title}}</strong> <br>— {{book.author}}</p>
+			<div class="book-container">
+				<p><strong>{{book.title}}</strong> <br>—{{book.author}}</p>
+			</div>
 				<button ng-click="vm.finishedReading(book)">Finished Reading</button>
 				<button ng-click="vm.reading.$remove(book)">Delete</button>
 			</div>
@@ -72,8 +79,10 @@
 		<div class="child">
 			<h2>Read</h2>
 			<div ng-repeat="book in vm.read">
+			<div class="book-container">
 				<p><strong>{{book.title}}</strong> <br>— {{book.author}}</p>
-				<p>{{book.note}}</p>
+				<p class="note">{{book.note}}</p>
+			</div>
 				<button ng-click="vm.read.$remove(book)">Delete</button>
 				<button ng-click="show = !show">Add Note</button>
 				<div>

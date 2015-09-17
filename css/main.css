@@ -64,8 +64,26 @@ main {
 	height: 90vh;
 }
 
+.book-container {
+	border: 1px solid #4600FF;
+	padding: 15px;
+}
+
+strong {
+	display: block;
+}
+
+.note {
+	margin-top: 10px;
+	font-size: 1em;
+	text-align: justify;
+	text-justify: inter-word;
+}
+
 button, input {
-	padding: 5px;
+	padding: 3px 5px;
+	font-family: "Inconsolata";
+	font-size: 0.9em;
 }
 
 a {
@@ -76,3 +94,22 @@ a {
 a:hover {
 	color: red;
 }
+
+.made-by {
+	float: right;
+}
+
+/*@media (max-width: 800px) {
+	main {
+		display: inline-block;
+	}
+	.search {
+		display: flex;
+	}
+	.search-form {
+		display: block;
+	}
+	.search-results {
+		flex: 1;
+	}
+}*/
