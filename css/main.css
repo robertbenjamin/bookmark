@@ -3,9 +3,16 @@
 	margin: 10px 0;
 }
 
+html {
+	height: 100%;
+}
+
 body {
-	max-width: 90%;
+	display: block;
+	overflow: hidden;
+	max-width: 95%;
 	margin: auto;
+	min-height: 100%;
 }
 
 nav {
@@ -17,8 +24,27 @@ main {
 	display: flex;
 }
 
-.row {
+.search-column {
 	flex: 1;
+}
+
+.books-column {
+	flex: 3;
+}
+
+.flex-parent {
+	display: flex;
+}
+
+.search-column {
+	padding-right: 20px;
+}
+
+.child {
+	flex: 1;
+	padding-right: 20px;
+	overflow-y: auto;
+	height: 90vh;
 }
 
 a {

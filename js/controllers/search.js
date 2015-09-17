@@ -12,7 +12,7 @@ angular
 			$http.get("https://www.googleapis.com/books/v1/volumes?q=" + query + "&key=AIzaSyDLhOKFqmBvr4XXHfoJfQFGevJR7cRekzQ")
 				.then(function(response) {
 					vm.searchResults = [];
-					for(var i = 0; i < 4; i++) {
+					for(var i = 0; i < 10; i++) {
 						var currentItem = response.data.items[i].volumeInfo
 						vm.searchResults.push({title: currentItem.title, 
 																	 author: currentItem.authors[0]})
@@ -21,10 +21,18 @@ angular
 			})
 		}
 
-		vm.add = function(result) {
+		vm.wantToRead = function(result) {
 			vm.searchResults = [];
-			BookAdder.set(result)
-		}	
+			BookAdder.set(result, "wantToRead")
+		}
+		vm.reading = function(result) {
+			vm.searchResults = [];
+			BookAdder.set(result, "reading")
+		}
+		vm.read = function(result) {
+			vm.searchResults = [];
+			BookAdder.set(result, "read")
+		}
 	})
 
 })()

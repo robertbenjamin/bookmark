@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300' rel='stylesheet' type='text/css'>
 
-		<script>var firebaseURL = "https://bookmark-it.firebaseio.com/books"</script>
+		<script>var firebaseURL = "https://bookmark-it.firebaseio.com"</script>
 
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/angular/angular.js"></script>
@@ -34,37 +34,59 @@
 </nav>
 
 <main>
-	<div class="row" ng-controller="searchController as vm">
+	<div class="search-column" ng-controller="searchController as vm">
+		<h2>Search for Books!</h2>
 		<form ng-submit="vm.search(vm.searchTerm)">
 			<input class="search-form" ng-model="vm.searchTerm"></input>
 			<input type="submit" value="submit">
 		</form>
 
-		<h2>Search Results</h2>
 		<div ng-repeat="result in vm.searchResults">
 			<p>{{result.title}} by {{result.author}}</p>
-			<button ng-click="vm.add(result)">Select</button>
+			<button ng-click="vm.wantToRead(result)">Want to Read</button>
+			<button ng-click="vm.reading(result)">Reading Now!</button>
+			<button ng-click="vm.read(result)">Read</button>
 		</div>
 	</div>
 
-	<div class="row" ng-controller="mainController as vm">
+	<div class="flex-parent books-column" ng-controller="mainController as vm">
 
-			<h2>Entry Form</h2>
+		<div class="child">
+			<!-- <h2>Entry Form</h2>
 			<form>
 				<label>Title: </label>
 				<input ng-model="vm.book.title">
 				<label>Author: </label>
 				<input ng-model="vm.book.author">
 				<input type="submit" value="submit" ng-click="vm.add(vm.book)"> 
-			</form>
+			</form> -->
 
 
-			<h2>Entries</h2>
-			<div ng-repeat="book in vm.books">
+			<h2>Want to Read</h2>
+			<div ng-repeat="book in vm.wantToRead">
 				<p>{{$index + 1}}. {{book.title}} — {{book.author}}</p>
-				<button ng-click="vm.books.$remove(book)">Delete</button>
+				<button ng-click="vm.wantToRead.$remove(book)">Delete</button>
 			</div>
+		</div>
 		
+		<div class="child">
+			<h2>Reading</h2>
+			<div ng-repeat="book in vm.reading">
+				<p>{{$index + 1}}. {{book.title}} — {{book.author}}</p>
+				<button ng-click="vm.reading.$remove(book)">Delete</button>
+			</div>
+
+		</div>
+
+		<div class="child">
+			<h2>Read</h2>
+			<div ng-repeat="book in vm.read">
+				<p>{{$index + 1}}. {{book.title}} — {{book.author}}</p>
+				<button ng-click="vm.read.$remove(book)">Delete</button>
+			</div>
+
+		</div>
+
 	</div>
 </main>
 </body>
