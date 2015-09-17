@@ -6,6 +6,7 @@
 		<title>Bookmark</title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300' rel='stylesheet' type='text/css'>
 
 		<script>var firebaseURL = "https://bookmark-it.firebaseio.com/books"</script>
 
@@ -26,13 +27,18 @@
 
 <body>
 
+<nav>
+	<a href="#">Bookmark</a>
+
+</nav>
+
 <div ng-controller="searchController as vm">
-	<form>
-		<input ng-model="vm.searchTerm"></input>
-		<input type="submit" value="submit" ng-click="vm.search(vm.searchTerm)">
+	<form ng-submit="vm.search(vm.searchTerm)">
+		<input class="search-form" ng-model="vm.searchTerm"></input>
+		<input type="submit" value="submit">
 	</form>
 
-	<h2>**Search Results**</h2>
+	<h2>Search Results</h2>
 	<div ng-repeat="result in vm.searchResults">
 		<p>{{result.title}} by {{result.author}}</p>
 		<button ng-click="vm.add(result)">Select</button>
