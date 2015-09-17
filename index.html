@@ -6,7 +6,7 @@
 		<title>Bookmark</title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
-		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
 		<script>var firebaseURL = "https://bookmark-it.firebaseio.com"</script>
 
@@ -29,7 +29,7 @@
 <body>
 
 <nav>
-	<a href="#">Bookmark</a>
+	<a href="#">Bookmark, the best place for your books</a>
 </nav>
 
 <main>
@@ -40,8 +40,8 @@
 			<input type="submit" value="submit">
 		</form>
 
-		<div ng-repeat="result in vm.searchResults">
-			<p>{{result.title}} by {{result.author}}</p>
+		<div class="search-results" ng-repeat="result in vm.searchResults">
+			<p><strong>{{result.title}}</strong> <br>— {{result.author}}</p>
 			<button ng-click="vm.wantToRead(result)">Want to Read</button>
 			<button ng-click="vm.reading(result)">Reading Now!</button>
 			<button ng-click="vm.read(result)">Read</button>
@@ -53,7 +53,7 @@
 		<div class="child">
 			<h2>Want to Read</h2>
 			<div ng-repeat="book in vm.wantToRead">
-				<p>{{book.title}} — {{book.author}}</p>
+				<p><strong>{{book.title}}</strong> <br>— {{book.author}}</p>
 				<button ng-click="vm.nowReading(book)">Reading!</button>
 				<button ng-click="vm.wantToRead.$remove(book)">Delete</button>
 			</div>
@@ -62,7 +62,7 @@
 		<div class="child">
 			<h2>Reading</h2>
 			<div ng-repeat="book in vm.reading">
-				<p>{{book.title}} — {{book.author}}</p>
+				<p><strong>{{book.title}}</strong> <br>— {{book.author}}</p>
 				<button ng-click="vm.finishedReading(book)">Finished Reading</button>
 				<button ng-click="vm.reading.$remove(book)">Delete</button>
 			</div>
@@ -72,7 +72,7 @@
 		<div class="child">
 			<h2>Read</h2>
 			<div ng-repeat="book in vm.read">
-				<p>{{book.title}} — {{book.author}}</p>
+				<p><strong>{{book.title}}</strong> <br>— {{book.author}}</p>
 				<p>{{book.note}}</p>
 				<button ng-click="vm.read.$remove(book)">Delete</button>
 				<button ng-click="show = !show">Add Note</button>

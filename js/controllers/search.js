@@ -12,7 +12,7 @@ angular
 			$http.get("https://www.googleapis.com/books/v1/volumes?q=" + query + "&key=AIzaSyDLhOKFqmBvr4XXHfoJfQFGevJR7cRekzQ")
 				.then(function(response) {
 					vm.searchResults = [];
-					for(var i = 0; i < 10; i++) {
+					for(var i = 0; i < 7; i++) {
 						var currentItem = response.data.items[i].volumeInfo
 						vm.searchResults.push({title: currentItem.title, 
 																	 author: currentItem.authors[0]})

@@ -1,6 +1,7 @@
 * {
 	box-sizing: border-box;
 	margin: 10px 0;
+	color: #4600FF;
 }
 
 html {
@@ -15,9 +16,19 @@ body {
 	min-height: 100%;
 }
 
+h2 {
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+p {
+	font-size: 1.2em;
+}
+
 nav {
-	border-bottom: 1px solid black;
-	padding: 5px;
+	border-bottom: 1px solid #4600FF;
+	padding: 15px 0;
+	margin-bottom: 20px;
 }
 
 main {
@@ -34,10 +45,16 @@ main {
 
 .flex-parent {
 	display: flex;
+	flex-wrap: column-wrap;
 }
 
 .search-column {
 	padding-right: 20px;
+}
+
+.search-results {
+	/*overflow-y: auto;*/
+	/*height: 90vh;*/
 }
 
 .child {
@@ -47,7 +64,15 @@ main {
 	height: 90vh;
 }
 
+button, input {
+	padding: 5px;
+}
+
 a {
 	text-decoration: none;
 	font-size: 1.5em;
+}
+
+a:hover {
+	color: red;
 }
