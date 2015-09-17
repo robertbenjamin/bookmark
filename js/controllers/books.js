@@ -2,7 +2,7 @@
 
 angular
 	.module('bookmark')
-	.controller('mainController', function($firebaseArray) {
+	.controller('mainController', function($firebaseArray, BookAdder, $rootScope) {
 		var vm = this;
 
 		var ref = new Firebase(firebaseURL);
@@ -11,10 +11,13 @@ angular
 		vm.books = data;
 
 		vm.add = function(book) {
-			console.log(book)
 			vm.books.$add(book)
 			vm.book = ""
 		}
+
+		$rootScope.$on('newBook', function() {
+			vm.add( BookAdder.get() )
+		})
 
 	})
 

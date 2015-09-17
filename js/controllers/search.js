@@ -2,7 +2,7 @@
 
 angular
 	.module('bookmark')
-	.controller('searchController', function($http) {
+	.controller('searchController', function($http, BookAdder) {
 		var vm = this;
 		vm.searchResults = [];
 
@@ -16,16 +16,14 @@ angular
 						var currentItem = response.data.items[i].volumeInfo
 						vm.searchResults.push({title: currentItem.title, 
 																	 author: currentItem.authors[0]})
-						console.log(currentItem)
 					}
 					$(".search-form").val("")
 			})
 		}
 
 		vm.add = function(result) {
-			console.log(result)
 			vm.searchResults = [];
-			return result
+			BookAdder.set(result)
 		}	
 	})
 

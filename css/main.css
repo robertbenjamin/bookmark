@@ -4,13 +4,21 @@
 }
 
 body {
-	max-width: 600px;
+	max-width: 90%;
 	margin: auto;
 }
 
 nav {
 	border-bottom: 1px solid black;
 	padding: 5px;
+}
+
+main {
+	display: flex;
+}
+
+.row {
+	flex: 1;
 }
 
 a {

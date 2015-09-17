@@ -3,7 +3,6 @@
 	angular
 		.module('bookmark', [
 	    'ngRoute',
-	    'ngResource',
 	    'firebase'
 	  ])
 
