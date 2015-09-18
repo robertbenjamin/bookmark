@@ -7,9 +7,3 @@
 	  ])
 
 })()
-
-/*
-'bookControllers',
-'bookServices',
-'bookDirectives'
-*/

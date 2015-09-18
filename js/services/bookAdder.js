@@ -22,7 +22,7 @@ angular
 							case "read":
 								$rootScope.$broadcast('read', this.selectedBook)
 								console.log("read!")
-								break;
+								break; 
 					}
 			}
 		}		

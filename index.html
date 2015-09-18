@@ -30,7 +30,7 @@
 
 <nav>
 	<a href="/">Bookmark: the best place for your books</a>
-	<a class="made-by" href="https://github.com/robertbenjamin"> * by r.b.</a>
+	<a class="right-nav" href="https://github.com/robertbenjamin"> * by r.b.</a>
 </nav>
 
 <main>
@@ -40,14 +40,15 @@
 			<input class="search-form" ng-model="vm.searchTerm"></input>
 			<input type="submit" value="submit">
 		</form>
-
-		<div class="search-results" ng-repeat="result in vm.searchResults">
-			<div class="book-container">
-				<p><strong>{{result.title}}</strong> <br>—{{result.author}}</p>
+		<div class="search-results">
+			<div ng-repeat="result in vm.searchResults">
+				<div class="book-container">
+					<p><strong>{{result.title}}</strong> <br>—{{result.author}}</p>
+				</div>
+				<button ng-click="vm.wantToRead(result)">Want to Read</button>
+				<button ng-click="vm.reading(result)">Reading Now!</button>
+				<button ng-click="vm.read(result)">Read</button>
 			</div>
-			<button ng-click="vm.wantToRead(result)">Want to Read</button>
-			<button ng-click="vm.reading(result)">Reading Now!</button>
-			<button ng-click="vm.read(result)">Read</button>
 		</div>
 	</div>
 

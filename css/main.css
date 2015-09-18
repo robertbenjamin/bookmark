@@ -13,7 +13,7 @@ body {
 	overflow: hidden;
 	max-width: 95%;
 	margin: auto;
-	min-height: 100%;
+	height: 100%;
 }
 
 h2 {
@@ -45,7 +45,6 @@ main {
 
 .flex-parent {
 	display: flex;
-	flex-wrap: column-wrap;
 }
 
 .search-column {
@@ -53,8 +52,8 @@ main {
 }
 
 .search-results {
-	/*overflow-y: auto;*/
-	/*height: 90vh;*/
+	overflow-y: auto;
+	height: 70vh;
 }
 
 .child {
@@ -95,7 +94,7 @@ a:hover {
 	color: red;
 }
 
-.made-by {
+.right-nav {
 	float: right;
 }
 
