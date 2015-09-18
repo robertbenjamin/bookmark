@@ -9,7 +9,7 @@ angular
 		vm.search = function(searchTerm) {
 			var query = searchTerm.split(" ").join("+")
 
-			$http.get("https://www.googleapis.com/books/v1/volumes?q=" + query + "&key=AIzaSyDLhOKFqmBvr4XXHfoJfQFGevJR7cRekzQ")
+			$http.get("https://www.googleapis.com/books/v1/volumes?q=" + query)
 				.then(function(response) {
 					vm.searchResults = [];
 					for(var i = 0; i < 7; i++) {
