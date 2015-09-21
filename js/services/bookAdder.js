@@ -13,15 +13,12 @@ angular
 					switch(list) {
 							case "wantToRead":
 								$rootScope.$broadcast('wantToRead', this.selectedBook)
-								console.log("want to read")
 								break;
 							case "reading":
 								$rootScope.$broadcast('reading', this.selectedBook)
-								console.log("reading")
 								break;
 							case "read":
 								$rootScope.$broadcast('read', this.selectedBook)
-								console.log("read!")
 								break; 
 					}
 			}
