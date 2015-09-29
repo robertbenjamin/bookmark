@@ -39,16 +39,20 @@ main {
   flex: 1;
 }
 
-.books-column {
-  flex: 4;
-}
 
-.flex-parent {
+
+.books {
   display: flex;
+  flex: 4;
 }
 
 .search-column {
   padding-right: 20px;
+}
+
+.search-form {
+  width: 90%;
+  margin: auto;
 }
 
 .search-results {
@@ -99,19 +103,31 @@ a:hover {
   float: right;
 }
 
+/* For Smaller Screens */
 
-/*@media (max-width: 800px) {
-  main {
-    display: inline-block;
+@media (max-width: 900px) {
+  .search-column {
+    display: none;
   }
-  .search {
-    display: flex;
+}
+
+@media (max-width: 650px) {
+  html, body {
+    height: auto;
+    overflow-y: scroll;
   }
-  .search-form {
-    display: block;
+  .search-column, .description {
+    display: none;
   }
-  .search-results {
-    flex: 1;
+  .books {
+    flex-direction: column;
+    overflow-y: visible;
   }
-}*/
+  .child {
+    height: 100%;
+    padding-right: 0;
+  }
+}
+
+
 
