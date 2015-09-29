@@ -1,9 +1,9 @@
 (function() {
 
-	angular
-		.module('bookmark', [
-	    'ngRoute',
-	    'firebase'
-	  ])
+  angular
+    .module('bookmark', [
+      'ngRoute',
+      'firebase'
+    ])
 
 })()

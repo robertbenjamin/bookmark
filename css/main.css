@@ -1,114 +1,117 @@
 * {
-	box-sizing: border-box;
-	margin: 10px 0;
-	color: #4600FF;
+  box-sizing: border-box;
+  margin: 10px 0;
+  color: #4600FF;
 }
 
 html {
-	height: 100%;
+  height: 100%;
 }
 
 body {
-	display: block;
-	overflow: hidden;
-	width: 95%;
-	margin: auto;
-	height: 100%;
+  display: block;
+  overflow: hidden;
+  width: 95%;
+  margin: auto;
+  height: 100%;
 }
 
 h2 {
-	margin-bottom: 20px;
-	text-transform: uppercase;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 p {
-	font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 nav {
-	border-bottom: 1px solid #4600FF;
-	padding: 15px 0;
-	margin-bottom: 20px;
+  border-bottom: 1px solid #4600FF;
+  padding: 15px 0;
+  margin-bottom: 20px;
 }
 
 main {
-	display: flex;
+  display: flex;
 }
 
 .search-column {
-	flex: 1;
+  flex: 1;
 }
 
 .books-column {
-	flex: 4;
+  flex: 4;
 }
 
 .flex-parent {
-	display: flex;
+  display: flex;
 }
 
 .search-column {
-	padding-right: 20px;
+  padding-right: 20px;
 }
 
 .search-results {
-	overflow-y: auto;
-	height: 70vh;
+  overflow-y: auto;
+  height: 70vh;
 }
 
 .child {
-	flex: 1;
-	padding-right: 20px;
-	overflow-y: auto;
-	height: 90vh;
+  flex: 1;
+  padding-right: 20px;
+  overflow-y: auto;
+  height: 90vh;
 }
 
 .book-container {
-	border: 1px solid #4600FF;
-	padding: 15px;
+  border: 1px solid #4600FF;
+  padding: 15px;
 }
 
 strong {
-	display: block;
+  display: block;
 }
 
 .note {
-	margin-top: 10px;
-	font-size: 1em;
-	text-align: justify;
-	text-justify: inter-word;
+  margin-top: 10px;
+  font-size: 1em;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
-button, input {
-	padding: 3px 5px;
-	font-family: "Inconsolata";
-	font-size: 0.9em;
+button,
+input {
+  padding: 3px 5px;
+  font-family: "Inconsolata";
+  font-size: 0.9em;
 }
 
 a {
-	text-decoration: none;
-	font-size: 1.5em;
+  text-decoration: none;
+  font-size: 1.5em;
 }
 
 a:hover {
-	color: red;
+  color: red;
 }
 
 .right-nav {
-	float: right;
+  float: right;
 }
 
+
 /*@media (max-width: 800px) {
-	main {
-		display: inline-block;
-	}
-	.search {
-		display: flex;
-	}
-	.search-form {
-		display: block;
-	}
-	.search-results {
-		flex: 1;
-	}
+  main {
+    display: inline-block;
+  }
+  .search {
+    display: flex;
+  }
+  .search-form {
+    display: block;
+  }
+  .search-results {
+    flex: 1;
+  }
 }*/
+
