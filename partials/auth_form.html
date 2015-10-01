@@ -1,0 +1,9 @@
+<form ng-submit="vm.auth(vm.user)">
+
+  <h2>{{vm.title}}</h2>
+  Email: <input class="auth-input" type="email" name="email" ng-model="vm.user.email" required><br>
+  Password: <input class="auth-input" type="password" name="password" ng-model="vm.user.password" required><br>
+  <input type="submit" value="Submit">
+  <input type="button" value="Cancel" ng-click="vm.cancel()">
+
+</form>

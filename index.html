@@ -22,14 +22,25 @@
     <script src="js/services/bookAdder.js"></script>
     <script src="js/controllers/books.js"></script>
     <script src="js/controllers/search.js"></script>
+    <script src="js/controllers/auth.js"></script>
 </head>
 
 <body>
 
-<nav>
-  <a href="/">Bookmark<span class="description">: the best place for your books</span></a>
-  <a class="right-nav" href="https://github.com/robertbenjamin"> * by r.b.</a>
-</nav>
+<div ng-controller="authController as vm">
+  <div class="auth" ng-include src="'partials/auth_form.html'" ng-show="vm.showForm"></div>
+
+  <nav>
+    <a href="/">Bookmark
+      <span class="description">: the best place for your books</span>
+    </a>
+    <div class="right-nav">
+      <a class="auth-button" href="#" ng-click="vm.showLogin()">Login |</a>
+      <a class="auth-button" href="#" ng-click="vm.showSignup()">Signup |</a>
+      <a href="https://github.com/robertbenjamin">* by r.b.</a>
+    </div>
+  </nav>
+</div>
 
 <main>
   <div class="search-column" ng-controller="searchController as vm">

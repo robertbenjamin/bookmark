@@ -31,6 +31,8 @@ nav {
   margin-bottom: 20px;
 }
 
+/* Main Section */
+
 main {
   display: flex;
 }
@@ -38,8 +40,6 @@ main {
 .search-column {
   flex: 1;
 }
-
-
 
 .books {
   display: flex;
@@ -72,15 +72,39 @@ main {
   padding: 15px;
 }
 
-strong {
-  display: block;
-}
-
 .note {
   margin-top: 10px;
   font-size: 1em;
   text-align: justify;
   text-justify: inter-word;
+}
+
+/* User Auth Stuff */
+
+.auth-button {
+  margin-right: 15px;
+}
+
+.auth {
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin: 200px auto;
+  padding: 15px;
+  width: 40%;
+  height: auto;
+  border: 10px #4600FF solid;
+  background-color: white;
+}
+
+.auth > form > .auth-input {
+  width: 100%;
+}
+
+/* Misc Styling */
+
+strong {
+  display: block;
 }
 
 button,
