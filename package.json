@@ -1,0 +1,19 @@
+{
+  "name": "bookmark",
+  "version": "2.0.0",
+  "description": "The best way to keep track of your book list.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertbenjamin/bookmark.git"
+  },
+  "author": "Robert Benjamin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robertbenjamin/bookmark/issues"
+  },
+  "homepage": "https://github.com/robertbenjamin/bookmark#readme"
+}
