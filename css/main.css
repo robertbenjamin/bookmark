@@ -47,7 +47,7 @@ main {
 }
 
 .search-column {
-  padding-right: 20px;
+  padding-right: 15px;
 }
 
 .search-form {
@@ -56,6 +56,7 @@ main {
 }
 
 .search-results {
+  padding-right: 5px;
   overflow-y: auto;
   height: 70vh;
 }
